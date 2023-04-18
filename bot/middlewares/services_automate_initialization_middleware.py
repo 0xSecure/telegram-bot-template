@@ -23,5 +23,5 @@ class ServicesAutomateInitialization(BaseMiddleware):
         """
 
         if "session" in data:
-            print(data["session"])
+            ...
         return await handler(event, data)
