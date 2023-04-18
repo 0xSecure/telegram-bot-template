@@ -11,14 +11,14 @@ from bot.misc import dispatcher
 
 
 async def main() -> None:
-    await dispatcher.callback_query.middleware(CallbackAnswerMiddleware())
-    await dispatcher.update.middleware(DatabaseSessionMiddleware(
+    dispatcher.callback_query.middleware(CallbackAnswerMiddleware())
+    dispatcher.update.middleware(DatabaseSessionMiddleware(
         session_maker=async_sessionmaker(
             bind=misc.database_engine,
             expire_on_commit=True
         )
     ))
-    await dispatcher.update.middleware(ServicesAutomateInitialization())
+    dispatcher.update.middleware(ServicesAutomateInitialization())
     routers.setup(dispatcher=dispatcher)
     if misc.settings.sentry_dsn:
         sentry_sdk.init(
