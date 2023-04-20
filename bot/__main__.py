@@ -10,7 +10,7 @@ from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 from bot import routers
 from bot.middlewares import DatabaseSessionMiddleware
 from bot.middlewares.services_automate_initialization_middleware import ServicesAutomateInitialization
-from bot.models.settings import Settings
+from bot.settings import Settings
 
 
 async def main() -> None:
