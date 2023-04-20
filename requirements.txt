@@ -1,6 +1,5 @@
 aiogram==3.0.0b7
-aiogram_dialog==2.0.0b18
 SQLAlchemy==2.0.9
-sentry-sdk==1.19.1
+sentry-sdk==1.20.0
 redis==4.5.4
 aiosqlite==0.19.0
