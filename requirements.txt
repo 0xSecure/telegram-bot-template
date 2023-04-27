@@ -3,3 +3,6 @@ SQLAlchemy==2.0.9
 sentry-sdk==1.20.0
 redis==4.5.4
 aiosqlite==0.19.0
+fluentogram==1.1.6
+pydantic==1.10.7
+watchdog==3.0.0

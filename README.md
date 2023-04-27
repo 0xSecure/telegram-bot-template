@@ -1,14 +1,16 @@
-**This architecture is written as an example and serves as a general template
-that will be finalized, directly with the participation of the community.**
+# Simple bot-architecture
 
+This is a simple bot architecture written with [aiogram 3.x](https://github.com/aiogram/aiogram) and [sqlalchemy 2.x](https://docs.sqlalchemy.org/en/20/orm/)
 
-### Environment
+You can see an example of a simple [bot](https://github.com/0xSecure/telegram-bot-template) implementation on this architecture 
 
-1. REDIS_DSN (Optional) - DSN for RedisStorage.
-2. SENTRY_DSN (Optional) - DSN for Sentry SDK.
-3. DATABASE_DSN - DSN for sqlalchemy.
-4. BOT_TOKEN - telegram bot api token.
+* Services for the layer between business logic and data retrieval logic
+* Fluent localization for more advanced and pleasant localization of the bot into different languages
+* There is no strong attachment to ORM, because the service approach is used
+* Sentry for modern and practical catching any errors not received at the QA stage
 
-### TODO
-1. I18n
-2. Migrations (Alembic)
+## Requirements:
+* Python 3.10 and newer
+
+## Stub-generation
+```python .\scripts\fluent_cli.py -dir-ftl resources/locales/ru -stub bot/stub.pyi```

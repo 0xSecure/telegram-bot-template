@@ -7,8 +7,9 @@ from aiogram.fsm.storage.redis import RedisStorage
 from aiogram.utils.callback_answer import CallbackAnswerMiddleware
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
-from bot import routers
+from bot import routers, utils
 from bot.middlewares import DatabaseSessionMiddleware
+from bot.middlewares.fluent_middleware import FluentMiddleware
 from bot.middlewares.services_automate_initialization_middleware import ServicesAutomateInitialization
 from bot.settings import Settings
 
@@ -30,6 +31,10 @@ async def main() -> None:
             expire_on_commit=True
         )
     ))
+    dispatcher.update.middleware(FluentMiddleware(translator_hub=utils.fluent.create_translator_hub_from_directory(
+        path="resources/locales",
+        root_locale="ru"
+    )))
     dispatcher.update.middleware(ServicesAutomateInitialization())
     routers.setup(dispatcher=dispatcher)
     if settings.sentry_dsn:

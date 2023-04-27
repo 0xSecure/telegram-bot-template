@@ -1,0 +1,1 @@
+start-hello = Hello, {$username}!
