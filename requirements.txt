@@ -6,3 +6,4 @@ aiosqlite==0.19.0
 fluentogram==1.1.6
 pydantic==1.10.7
 watchdog==3.0.0
+Jinja2==3.1.2
