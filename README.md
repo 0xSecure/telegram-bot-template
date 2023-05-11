@@ -13,4 +13,4 @@ You can see an example of a simple [bot](https://github.com/0xSecure/telegram-bo
 * Python 3.10 and newer
 
 ## Stub-generation
-```python .\scripts\fluent_cli.py -dir-ftl resources/locales/ru -stub bot/stub.pyi```
+```python scripts/fluent_cli.py -track-ftl resources/locales/ru -stub bot/stub.pyi```
